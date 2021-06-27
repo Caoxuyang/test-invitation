@@ -52,7 +52,7 @@
               this.getWidth(this.$refs.barrageThird),
               this.getWidth(this.$refs.barrageFourth)
             ]
-        this.initialOffset = barrageWidth + 15
+        this.initialOffset = barrageWidth + 100
         barrageWidthGroup.map((item,index) => {
           this.animationStyle += `
             .barrage-${index}{
@@ -92,15 +92,15 @@
     position: relative;
     p{
       position: absolute;
-      padding: 5px 0;
+      padding: 1px 0;
       white-space:nowrap;
-      transition: all 0.6s linear;
-      -webkit-transition: all 0.6s linear;
+      transition: all 0.1s linear;
+      -webkit-transition: all 0.01s linear;
       span{
-        padding: 0 15px;
+        padding: 0 20px;
         &.mine{
           color: #e6db74;
-          padding: 4px 6px;
+          padding: 3px 6px;
           border: 1px solid #e6db74;
         }
       }

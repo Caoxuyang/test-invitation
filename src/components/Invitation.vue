@@ -4,29 +4,31 @@
       <div class="invitation-cover">
         <div class="cover-content" :class="{'invitation-up':isOpening}">
           <div class="content-inside">
-            <img class="content-inside-photo" src="../images/photo.jpg">
-            <p>我们结婚啦！</p>
-            <p><b>Jun & undefined</b></p>
-            <p>时间：invalid date value</p>
-            <p>地点：<b>location can not be found</b></p>
+            <img class="content-inside-photo" src="../images/main_pic.png">
+            <div class="titile"><b>邀请函</b></div>
+            <p><b>鹰击长空 因你不同</b></p>
+            <p>时间：<b>2021.07.06</b></p>
+            <p>地点：<b>柏楚电子 6楼培训室</b></p>
             <div class="content-inside-bless">
               <input
-                placeholder="写下你的祝福" 
+                placeholder="写下你在柏楚第一年的展望" 
                 @keyup.enter="sendBarrage"
                 @focus="isFocused = true"
                 @blur="isFocused = false, hasEntered = false"
                 v-model="wish"
                 ref="wishInput"
               >
-              <p v-if="!wish && isFocused && hasEntered">请输入祝福哦</p>
+              <p v-if="!wish && isFocused && hasEntered">发送柏士寄语</p>
               <div>
-                <button @click="sendBarrage">发送祝福弹幕</button>
-                <button @click="closeInvitation">关闭</button>
+                <button @click="sendBarrage">发送柏士寄语</button>
+                <button class="close-button" @click="closeInvitation">关</button>
               </div>
             </div>
           </div>
         </div>
-        <div class="cover-inside-left" :class="{'opening':isOpening}"></div>
+        <div class="cover-inside-left" :class="{'opening':isOpening}">
+           <img class="cover-logo" src="../images/baichu.png">
+        </div>
         <div class="cover-inside-right" :class="{'opening':isOpening}"></div>
         <img class="cover-inside-seal" src="../images/seal.png" @click="openInvitation" :class="{'invitation-flight':isOpening}">
       </div>
@@ -75,6 +77,9 @@ export default {
 </script>
 
 <style lang="less">
+  .cover-logo{
+    padding-top: 40%;
+  }
   .wedding-invitation{
     position: fixed;
     top: 0;
