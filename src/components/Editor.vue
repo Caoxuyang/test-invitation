@@ -82,14 +82,14 @@
           let count = 0, typingCount = 0, typing
           // 写代码每一帧的函数
           let step = () => {
-            let randomNumber = Math.round(Math.random() * 6)
+            let randomNumber = Math.round(Math.random() * 12 + 12)
             // 摸你打字的随机速度
             if(count % 2 === 0 && randomNumber % 4 === 0){
               this.currentCode = this.code.substring(0, typingCount)
               typingCount++
             }
             // 大约每 24 帧光标闪动一次
-            if(count % 24 === 0){
+            if(count % 10 === 0){
               this.isCursorVisible = this.isCursorVisible === 0 ? 1 : 0
             }
             count++
