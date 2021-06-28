@@ -7,8 +7,20 @@
     <meta name = "viewport" content="width=device-width,initial-scale=1.0 user-scalable = no , maximum-scale=1.0">
     <title>柏士计划邀请函</title>
   </head>
-  <body>
-    <audio controls autoplay loop hidden>
+  <body>    
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+      function audioAutoPlay() {
+        var aud = $("audio")[0];
+        document.addEventListener("WeixinJSBridgeReady", function() {
+          aud.play();
+        }, false);
+      }
+      audioAutoPlay()
+    });
+    </script>
+    <audio controls loop hidden>
       <source src="bgm.mp3" type="audio/mp3">
     </audio>
     <noscript>
